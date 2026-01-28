@@ -14,7 +14,9 @@ class Student:
 
 
 class Library:
-    def __init__(self, city: str, street: str, zip_code: str, open_hours: str, phone: str) -> None:
+    def __init__(
+        self, city: str, street: str, zip_code: str, open_hours: str, phone: str
+    ) -> None:
         self.city = city
         self.street = street
         self.zip_code = zip_code
@@ -86,14 +88,20 @@ class Book:
 
 
 class Order:
-    def __init__(self, employee: Employee, student: Student, books: List[Book], order_date: date) -> None:
+    def __init__(
+        self, employee: Employee, student: Student, books: List[Book], order_date: date
+    ) -> None:
         self.employee = employee
         self.student = student
         self.books = books
         self.order_date = order_date
 
     def __str__(self) -> str:
-        books_str = "\n    ".join(str(b) for b in self.books) if self.books else "(brak książek)"
+        books_str = (
+            "\n    ".join(str(b) for b in self.books)
+            if self.books
+            else "(brak książek)"
+        )
         return (
             "Order(\n"
             f"  order_date={self.order_date.isoformat()},\n"
@@ -108,7 +116,9 @@ class Order:
 
 def main() -> None:
     # 2 biblioteki
-    lib1 = Library("Warszawa", "Marszałkowska 10", "00-001", "08:00-18:00", "+48 111 222 333")
+    lib1 = Library(
+        "Warszawa", "Marszałkowska 10", "00-001", "08:00-18:00", "+48 111 222 333"
+    )
     lib2 = Library("Kraków", "Długa 5", "30-002", "09:00-17:00", "+48 444 555 666")
 
     # 5 książek
@@ -119,9 +129,36 @@ def main() -> None:
     b5 = Book(lib1, date(1999, 6, 30), "Bolesław", "Prus", 510)
 
     # 3 pracowników
-    e1 = Employee("Maria", "Lis", date(2021, 3, 1), date(1990, 7, 12), "Warszawa", "Marszałkowska 10", "00-001", "+48 700 100 200")
-    e2 = Employee("Piotr", "Zieliński", date(2019, 10, 5), date(1985, 2, 3), "Kraków", "Długa 5", "30-002", "+48 700 300 400")
-    e3 = Employee("Katarzyna", "Wójcik", date(2023, 6, 15), date(1995, 12, 25), "Warszawa", "Marszałkowska 10", "00-001", "+48 700 500 600")
+    e1 = Employee(
+        "Maria",
+        "Lis",
+        date(2021, 3, 1),
+        date(1990, 7, 12),
+        "Warszawa",
+        "Marszałkowska 10",
+        "00-001",
+        "+48 700 100 200",
+    )
+    e2 = Employee(
+        "Piotr",
+        "Zieliński",
+        date(2019, 10, 5),
+        date(1985, 2, 3),
+        "Kraków",
+        "Długa 5",
+        "30-002",
+        "+48 700 300 400",
+    )
+    e3 = Employee(
+        "Katarzyna",
+        "Wójcik",
+        date(2023, 6, 15),
+        date(1995, 12, 25),
+        "Warszawa",
+        "Marszałkowska 10",
+        "00-001",
+        "+48 700 500 600",
+    )
 
     # 3 studentów
     s1 = Student("Tomasz Student", [55, 60, 70])
