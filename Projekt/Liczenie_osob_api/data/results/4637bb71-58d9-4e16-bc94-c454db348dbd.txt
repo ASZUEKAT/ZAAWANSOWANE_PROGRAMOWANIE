@@ -1,0 +1,7 @@
+state=SUCCESS
+task_id=4637bb71-58d9-4e16-bc94-c454db348dbd
+job_id=4637bb71-58d9-4e16-bc94-c454db348dbd
+count=3
+annotated_path=/app/data/annotated/4637bb71-58d9-4e16-bc94-c454db348dbd.jpg
+image_path=/app/data/uploads/4637bb71-58d9-4e16-bc94-c454db348dbd_test.jpg
+elapsed_ms=127

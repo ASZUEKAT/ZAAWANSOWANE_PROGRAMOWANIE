@@ -1,0 +1,7 @@
+state=SUCCESS
+task_id=a6ffd0e2-443e-4776-8fc1-787bba754e0d
+job_id=a6ffd0e2-443e-4776-8fc1-787bba754e0d
+count=3
+annotated_path=/app/data/annotated/a6ffd0e2-443e-4776-8fc1-787bba754e0d.jpg
+image_path=/app/data/uploads/a6ffd0e2-443e-4776-8fc1-787bba754e0d.jpg
+elapsed_ms=154

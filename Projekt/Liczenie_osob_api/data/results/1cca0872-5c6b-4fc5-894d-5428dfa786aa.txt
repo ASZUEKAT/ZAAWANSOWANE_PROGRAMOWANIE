@@ -1,0 +1,7 @@
+state=SUCCESS
+task_id=1cca0872-5c6b-4fc5-894d-5428dfa786aa
+job_id=1cca0872-5c6b-4fc5-894d-5428dfa786aa
+count=3
+annotated_path=/app/data/annotated/1cca0872-5c6b-4fc5-894d-5428dfa786aa.jpg
+image_path=/app/data/input/test.jpg
+elapsed_ms=162

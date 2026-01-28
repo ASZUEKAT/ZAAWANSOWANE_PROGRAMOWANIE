@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+celery
+redis
+httpx
+python-multipart
+opencv-python-headless
+pillow
+
+# Ultralytics
+ultralytics
+
+# Wymuszamy torch CPU
+torch==2.5.1+cpu ; platform_system == "Linux" and platform_machine == "x86_64"
+torchvision==0.20.1+cpu ; platform_system == "Linux" and platform_machine == "x86_64"
+--extra-index-url https://download.pytorch.org/whl/cpu

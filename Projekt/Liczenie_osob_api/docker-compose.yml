@@ -1,0 +1,36 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  api:
+    build: .
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672//
+      - RESULT_BACKEND=redis://redis:6379/0
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+      - redis
+
+  worker:
+    build: .
+    command: celery -A app.celery_app worker -Q celery -l info
+    environment:
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672//
+      - RESULT_BACKEND=redis://redis:6379/0
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - rabbitmq
+      - redis
